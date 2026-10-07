@@ -43,4 +43,11 @@ fun main() {
     println("Sensor 1 es crítico: ${sensor1.esCritico()}") // Muestra: Sensor 1 es crítico: false
     println("Sensor 2 es crítico: ${sensor2.esCritico()}") // Muestra: Sensor 2 es crítico: false
     println("Sensor 3 es crítico: ${sensor3.esCritico()}") // Muestra: Sensor 3 es crítico: true
+
+    val sensor1Copia = sensor1.copy(ultimaLectura = 34.0)
+    println("Copia de Sensor 1: $sensor1Copia") // Muestra: Copia de Sensor 1: SensorKt(idSensor=S1, tipo=TEMPERATURA, ultimaLectura=34.0, estado=ACTIVO)
+    println("Copia 1 es crítico: ${sensor1Copia.esCritico()}") // Muestra: Copia 1 es crítico: false
+    println("Copia de Sensor 3: ${sensor3.copy(ultimaLectura = 36.0)}") // Muestra: Copia de Sensor 3: SensorKt(idSensor=S3, tipo=TEMPERATURA, ultimaLectura=36.0, estado=null)
+    println("Copia 3 es crítico: ${sensor3.copy(ultimaLectura = 36.0).esCritico()}") // Muestra: Copia 3 es crítico: true
+
 }
