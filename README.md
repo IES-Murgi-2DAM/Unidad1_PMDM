@@ -17,3 +17,14 @@ La clase no es incompatible con Android por estar escrita en Java, pero tiene as
 2. Los datos se pueden modificar sin validarlos. Aunque los campos son private, los métodos setEstado y setUltimaLectura son públicos y aceptan cualquier valor. Por ejemplo, se podría guardar un estado desconocido o una lectura que no tenga sentido para la aplicación. En una app móvil, esos datos incorrectos pueden provocar pantallas o resultados inesperados.
 3. Un valor nulo podría causar un fallo en tiempo de ejecución. Java permite que idSensor sea null, y el método equals llama a idSensor.equals(...). Si se compara un sensor cuyo identificador es nulo, puede producirse una NullPointerException y cerrarse la operación que estaba realizando la app.
 Los campos no tienen visibilidad pública: son privados. El problema relacionado con la visibilidad es que algunos métodos públicos permiten cambiar ciertos datos sin comprobar que sean válidos. La falta de gestión de excepciones no la presentaría como un inconveniente propio de esta clase, ya que su función principal es almacenar datos y no realiza operaciones que necesariamente deban lanzar excepciones.
+
+## AP104
+He generado un ejemplo de cómo usar la lógica funcional para operar con datos. He intentado dejar usos de formas más avanzadas de hacer las cosas para que los estudiantes puedan ver cómo se puede hacer de manera más eficiente y elegante. He añadido comentarios explicativos para que se entienda mejor el código.
+
+Ejemplo de salida:
+```
+Lecturas válidas: [23.5, 36.8, 41.2, 18.0, 35.5]
+Lecturas formateadas: [Lectura: 23,50 ºC, Lectura: 36,80 ºC, Lectura: 41,20 ºC, Lectura: 18,00 ºC, Lectura: 35,50 ºC]
+Media de lecturas válidas: 31,00 ºC
+Lectura crítica: Lectura crítica: 41,20 ºC
+```
